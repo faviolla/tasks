@@ -10,3 +10,6 @@ Objects & Comparison operators
 
 HW_03
 Switch case, conditional(ternary) operator, loops
+
+HW_04
+Functions
