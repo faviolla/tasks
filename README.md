@@ -13,3 +13,6 @@ Switch case, conditional(ternary) operator, loops
 
 HW_04
 Functions
+
+HW_05
+Higher order functions, array mathods, sort
