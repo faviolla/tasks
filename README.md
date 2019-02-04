@@ -28,3 +28,6 @@ Events
 
 HW_09
 This. Destruction. Arrow function
+
+HW_10
+Constructors. Closures
