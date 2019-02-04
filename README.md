@@ -22,3 +22,6 @@ DOM/BOM starting
 
 HW_07
 Creating DOM elements. Adding elements on the page. Working with atributes
+
+HW_08
+Events
