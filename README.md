@@ -25,3 +25,6 @@ Creating DOM elements. Adding elements on the page. Working with atributes
 
 HW_08
 Events
+
+HW_09
+This. Destruction. Arrow function
