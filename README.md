@@ -19,3 +19,6 @@ Higher order functions, array mathods, (todo: sort)
 
 HW_06
 DOM/BOM starting
+
+HW_07
+Creating DOM elements. Adding elements on the page. Working with atributes
