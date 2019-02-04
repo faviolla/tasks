@@ -31,3 +31,6 @@ This. Destruction. Arrow function
 
 HW_10
 Constructors. Closures
+
+HW_11
+Classes ES6. AJAX
