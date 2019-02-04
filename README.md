@@ -15,4 +15,7 @@ HW_04
 Functions
 
 HW_05
-Higher order functions, array mathods, sort
+Higher order functions, array mathods, (todo: sort)
+
+HW_06
+DOM/BOM starting
