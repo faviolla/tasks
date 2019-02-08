@@ -34,3 +34,6 @@ Constructors. Closures
 
 HW_11
 Classes ES6. AJAX
+
+HW_12
+HttpClient. Creating input autocomplete
