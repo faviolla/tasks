@@ -37,3 +37,6 @@ Classes ES6. AJAX
 
 HW_12
 HttpClient. Creating input autocomplete
+
+HW_13
+Promises
