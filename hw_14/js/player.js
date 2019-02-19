@@ -30,8 +30,12 @@ class VideoPlayer {
         this._video.currentTime = (event.offsetX / this._progressContainer.offsetWidth) * this._video.duration;
     }
 
-    _volumeProgress(event) {
+    _volumeProgress() {
         this._video.volume = this._volume.value;
+    }
+
+    _playbackRateProgress() {
+        this._video.playbackRate = this._playbackRate.value;
     }
 
     _addTemplate() {
@@ -47,6 +51,7 @@ class VideoPlayer {
         this._progress = this._videoContainer.querySelector('.progress__filled');
         this._progressContainer = this._videoContainer.querySelector('.progress');
         this._volume = this._videoContainer.getElementsByTagName('input').volume;
+        this._playbackRate = this._videoContainer.getElementsByTagName('input').playbackRate;
     }
 
     _setEvents() {
@@ -54,7 +59,8 @@ class VideoPlayer {
         this._toggleBtn.addEventListener('click', () => this.toggle());
         this._video.addEventListener('timeupdate', () => this._videoProgressHandler());
         this._progressContainer.addEventListener('click', (e) => this._peremotka(e));
-        this._volume.addEventListener('input', (e) => this._volumeProgress(e));
+        this._volume.addEventListener('input', () => this._volumeProgress());
+        this._playbackRate.addEventListener('input', () => this._playbackRateProgress());
     }
 
     _createVideoTemplate() {
@@ -67,9 +73,9 @@ class VideoPlayer {
               </div>
               <button class="player__button toggle" title="Toggle Play">►</button>
               <input type="range" name="volume" class="player__slider" min=0 max="1" step="0.05" value="${this._settings.volume}">
-              <input type="range" name="playbackRate" class="player__slider" min="0.5" max="2" step="0.1" value="1">
-              <button data-skip="-1" class="player__button">« 1s</button>
-              <button data-skip="1" class="player__button">1s »</button>
+              <input type="range" name="playbackRate" class="player__slider" min="0.5" max="2" step="0.1" value="${this._settings.playbackRate}">
+              <button data-skip="${this._settings.skipPrev}" class="player__button">« ${this._settings.skipPrev}s</button>
+              <button data-skip="${this._settings.skipNext}" class="player__button">${this._settings.skipNext}s »</button>
             </div>
       </div>
         `;
@@ -79,7 +85,10 @@ class VideoPlayer {
         return {
             videoUrl: '',
             videoPlayerContainer: 'body',
-            volume: 1
+            volume: 1,
+            playbackRate: 1,
+            skipPrev: -1,
+            skipNext: 1
         }
     }
 }
