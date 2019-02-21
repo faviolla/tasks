@@ -38,6 +38,14 @@ class VideoPlayer {
         this._video.playbackRate = this._playbackRate.value;
     }
 
+    _skipPrevClick() {
+        this._video.currentTime += this._settings.skipPrev;
+    }
+
+    _skipNextClick() {
+        this._video.currentTime += this._settings.skipNext;
+    }
+
     _addTemplate() {
         const template = this._createVideoTemplate();
         const container = document.querySelector(this._settings.videoPlayerContainer);
@@ -52,6 +60,8 @@ class VideoPlayer {
         this._progressContainer = this._videoContainer.querySelector('.progress');
         this._volume = this._videoContainer.getElementsByTagName('input').volume;
         this._playbackRate = this._videoContainer.getElementsByTagName('input').playbackRate;
+        this._skipPrev = this._videoContainer.querySelector('[data-skip="' + this._settings.skipPrev + '"]');
+        this._skipNext = this._videoContainer.querySelector('[data-skip="' + this._settings.skipNext + '"]');
     }
 
     _setEvents() {
@@ -61,6 +71,10 @@ class VideoPlayer {
         this._progressContainer.addEventListener('click', (e) => this._peremotka(e));
         this._volume.addEventListener('input', () => this._volumeProgress());
         this._playbackRate.addEventListener('input', () => this._playbackRateProgress());
+        this._skipPrev.addEventListener('click', () => this._skipPrevClick());
+        this._skipNext.addEventListener('click', () => this._skipNextClick());
+        //  this._video.addEventListener('dblclick', () => this._skipPrevClick());
+        // this._video.addEventListener('dblclick', () => this._skipNextClick());
     }
 
     _createVideoTemplate() {
