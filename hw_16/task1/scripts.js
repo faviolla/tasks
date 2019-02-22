@@ -1,3 +1,7 @@
+/**
+ * 
+ * @param {String} name 
+ */
 function Planet(name) {
     this.name = name;
     this.getName = function () {
@@ -5,6 +9,11 @@ function Planet(name) {
     }
 }
 
+/**
+ * 
+ * @param {String} name 
+ * @param {String} satelliteName 
+ */
 function PlanetWithSatellite(name, satelliteName) {
     Planet.call(this);
     this.name = name;
