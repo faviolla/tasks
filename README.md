@@ -42,4 +42,4 @@ HW_13
 Promises
 
 HW_14
-VideoPlayer
+VideoPlayer [demo](https://faviolla.github.io/tasks/hw_14/)
